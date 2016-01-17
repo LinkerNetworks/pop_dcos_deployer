@@ -17,6 +17,7 @@ mesosmaster:
    - MESOS_QUORUM=2
    - MESOS_REGISTRY=in_memory
    - MESOS_WORK_DIR=/var/lib/mesos
+   - MESOS_HOSTNAME_LOOKUP=false
 #   - "constraint:master==true"
    - "affinity:container!=*mesosmaster*"
 
@@ -42,6 +43,7 @@ mesosslave:
    - MESOS_CONTAINERIZERS=docker
    - MESOS_LOG_DIR=/var/log/mesos
    - MESOS_LOGGING_LEVEL=INFO
+   - MESOS_HOSTNAME_LOOKUP=false
  #  - "constraint:slave==true"
    - "affinity:container!=*mesosslave*"
 
